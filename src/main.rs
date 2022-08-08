@@ -108,11 +108,11 @@ fn main() -> Result<()> {
 }
 
 fn load_on(connection: &mut Connection, opt: &Opt) -> Result<()> {
-    Ok(connection.run_command("load.on", Some(&opt.ups_name))?)
+    Ok(connection.run_command(&opt.ups_name, Some("load.on"))?)
 }
 
 fn load_off(connection: &mut Connection, opt: &Opt) -> Result<()> {
-    Ok(connection.run_command("load.off", Some(&opt.ups_name))?)
+    Ok(connection.run_command(&opt.ups_name, Some("load.off"))?)
 }
 
 fn usage(connection: &mut Connection, opt: &Opt, usage_types: &Vec<UsageType>) -> Result<()> {
